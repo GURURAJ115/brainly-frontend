@@ -12,7 +12,7 @@ export interface ButtonProps {
 
 const variantStyles = {
     "primary": "bg-indigo-600 text-white",
-    "secondary": "bg-indigo-300 text-indigo-600"
+    "secondary": "bg-indigo-200 text-indigo-800"
 
 }
 
@@ -22,8 +22,8 @@ const sizeStyles = {
     "lg": "p-6",
 }
 
-const defaultStyles = "rounded-md flex items-center justify-center"
+const defaultStyles = "cursor-pointer rounded-md flex items-center justify-center font-medium"
 
 export const Button = (props: ButtonProps) => {
-    return <button className={`${variantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]}`}>{props.startIcon ? <div className="pr-2">{props.startIcon}</div> : null}{props.text}{props.endIcon ? <div className="pl-2">{props.endIcon}</div> : null}</button>
+    return <button onClick={props.onClick} className={`${variantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]}`}>{props.startIcon ? <div className="pr-2">{props.startIcon}</div> : null}{props.text}{props.endIcon ? <div className="pl-2">{props.endIcon}</div> : null}</button>
 }
