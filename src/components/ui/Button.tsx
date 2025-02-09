@@ -7,6 +7,7 @@ export interface ButtonProps {
     text: string;
     startIcon?: ReactElement;
     endIcon?: ReactElement;
+    loading?: boolean;
     onClick: () => void;
 }
 
@@ -25,5 +26,10 @@ const sizeStyles = {
 const defaultStyles = "cursor-pointer rounded-md flex items-center justify-center font-medium"
 
 export const Button = (props: ButtonProps) => {
-    return <button onClick={props.onClick} className={`${variantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]}`}>{props.startIcon ? <div className="pr-2">{props.startIcon}</div> : null}{props.text}{props.endIcon ? <div className="pl-2">{props.endIcon}</div> : null}</button>
+    return <button onClick={props.onClick} 
+    className={`${variantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]} ${props.loading ? "opacity-45":""}`}>
+        {props.startIcon ? <div className="pr-2">{props.startIcon}</div> : null}
+        {props.text}
+        {props.endIcon ? <div className="pl-2">{props.endIcon}</div> : null}
+        </button>
 }
