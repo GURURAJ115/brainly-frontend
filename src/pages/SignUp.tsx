@@ -22,8 +22,8 @@ export function SignUp() {
         alert("You have signed up")
         navigate("/signin")
     }
-    return <div className="h-screen w-screen bg-gray-200 flex justify-center items-center">
-        <div className="bg-white rounded-xl border min-w-48 p-4">
+    return <div className="h-screen w-screen bg-gray-200 dark:bg-gray-800 flex justify-center items-center">
+        <div className="bg-white dark:bg-slate-500 rounded-xl border min-w-48 p-4">
             <Input ref={usernameRef} placeholder="Username" />
             <Input ref={passwordRef} placeholder="Password" />
             <div className="flex justify-center">

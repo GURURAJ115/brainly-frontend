@@ -27,23 +27,23 @@ export function Card({id,title,link,type,}: CardProps) {
 )}
 
 
-        <div className="p-4 bg-white rounded-md shadow-md border-slate-200 max-w-72 border min-h-48 min-w-56">
+        <div className="p-4 bg-gray-50 dark:bg-gray-500 rounded-md shadow-md border-slate-200 max-w-72 border min-h-48 min-w-56">
             <div className="flex justify-between ">
                 <div className="flex items-center text-md">
-                    <div className="text-gray-500 pr-2">
+                    <div className="text-gray-500 dark:text-white pr-2">
                         {type==="youtube"
                         && <YoutubeIcon></YoutubeIcon>}
                     </div>
-                    <div>
+                    <div className="text-gray-500 dark:text-zinc-300 pr-2">
                         {title}
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <div className="text-gray-500 pr-2 cursor-pointer" onClick={() => setEditModalOpen(true)}
+                    <div className="text-gray-500 dark:text-white pr-2 cursor-pointer" onClick={() => setEditModalOpen(true)}
                     >
                         <EditIcon></EditIcon>
                     </div>
-                    <div className="text-gray-500 cursor-pointer" onClick={() => setDeleteModalOpen(true)}>
+                    <div className="text-gray-500 dark:text-white cursor-pointer" onClick={() => setDeleteModalOpen(true)}>
                         <DeleteIcon></DeleteIcon>
                     </div>
                 </div>

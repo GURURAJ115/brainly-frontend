@@ -8,6 +8,7 @@ import { Sidebar } from '../components/ui/Sidebar'
 import { useContent } from '../hooks/useContent'
 import axios from 'axios'
 import { BACKEND_URL } from '../config'
+import { DarkModeToggle } from '../components/ui/DarkModeToggle'
 
 export function Dashboard() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -21,11 +22,12 @@ export function Dashboard() {
     return (
         <div>
             <Sidebar />
-            <div className='p-4 ml-72 min-h-screen bg-gray-100 border-2 border-gray-200'>
+            <div className="p-4 min-h-screen dark:bg-gray-800 bg-gray-100 border-2 border-gray-200 transition-all md:ml-40">
                 <CreateContentModal open={modalOpen} onClose={() => {
                     setModalOpen(false);
                 }} />
                 <div className="flex justify-end gap-4">
+                <DarkModeToggle></DarkModeToggle>
                 <Button 
                     variant="secondary" 
                     startIcon={<ShareIcon size="md" />} 
@@ -59,7 +61,7 @@ export function Dashboard() {
 
                     <Button startIcon={<PlusIcon size={'md'} />} variant={'primary'} size={'sm'} text={'Add Content'} onClick={() => setModalOpen(true)}  ></Button>
                 </div>
-
+                    <br />
                 <div className="flex gap-4 flex-wrap">
                 {contents.map(({ _id, type, link, title }) => (
                     <Card 

@@ -51,7 +51,7 @@ export function EditContentModal({ open, onClose, content }) {
                 <div className="w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-60 flex justify-center"></div>
                 <div className="w-screen h-screen fixed top-0 left-0 flex justify-center">
                     <div className="flex flex-col justify-center">
-                        <span className="bg-white p-4 rounded">
+                        <span className="bg-white dark:bg-slate-500 p-4 rounded">
                             <div className="flex justify-end">
                                 <div onClick={onClose} className="cursor-pointer">
                                     <CrossIcon />
