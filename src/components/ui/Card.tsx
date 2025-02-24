@@ -1,17 +1,28 @@
-import { ShareIcon } from "../../icons/ShareIcon";
+import { useState } from "react";
+import { DeleteIcon } from "../../icons/DeleteIcon";
+import { EditIcon } from "../../icons/EditIcon";
+import { YoutubeIcon } from "../../icons/YoutubeIcon";
+import { DeleteContentModal } from "./DeleteContentModal";
 
 interface CardProps{
+    id: string;
     title: string;
     link: string;
     type:"youtube"|"twitter"
+    // onDelete: (id: string)=>void;
 }
-export function Card({title,link,type}: CardProps) {
+export function Card({id,title,link,type,}: CardProps) {
+    const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+
     return <div>
+                    <DeleteContentModal open={deleteModalOpen} onClose={() => setDeleteModalOpen(false)} contentId={id} />
+
         <div className="p-4 bg-white rounded-md shadow-md border-slate-200 max-w-72 border min-h-48 min-w-56">
             <div className="flex justify-between ">
                 <div className="flex items-center text-md">
                     <div className="text-gray-500 pr-2">
-                        <ShareIcon size={"md"}></ShareIcon>
+                        {type==="youtube"
+                        && <YoutubeIcon></YoutubeIcon>}
                     </div>
                     <div>
                         {title}
@@ -19,10 +30,10 @@ export function Card({title,link,type}: CardProps) {
                 </div>
                 <div className="flex items-center">
                     <div className="text-gray-500 pr-2">
-                        <ShareIcon size={"md"}></ShareIcon>
+                        <EditIcon></EditIcon>
                     </div>
-                    <div className="text-gray-500">
-                        <ShareIcon size={"md"}></ShareIcon>
+                    <div className="text-gray-500 cursor-pointer" onClick={() => setDeleteModalOpen(true)}>
+                        <DeleteIcon></DeleteIcon>
                     </div>
                 </div>
             </div>
