@@ -1,6 +1,6 @@
 export function BrainIcon() {
     return <svg
-        className="size-8"
+        className="size-8 text-black dark:text-white"
         viewBox="0 0 200 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ export function BrainIcon() {
          C 190 110, 180 70, 150 60
          C 150 30, 130 10, 100 10
          Z"
-            stroke="black"
+            stroke="currentColor"
             stroke-width="4"
             fill="none"
         />
@@ -38,7 +38,7 @@ export function BrainIcon() {
          M90 130 C 110 140, 110 160, 100 170
          M110 130 C 90 140, 90 160, 100 170
         "
-            stroke="black"
+            stroke="currentColor"
             stroke-width="2"
             fill="none"
         />

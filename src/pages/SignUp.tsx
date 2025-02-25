@@ -29,6 +29,12 @@ export function SignUp() {
             <div className="flex justify-center">
                 <Button onClick={signup} variant="primary" text="SignUp" size="md"/>
             </div>
+        <div className="flex justify-between items-center  mt-4">
+            <div>
+            Already a user?
+            </div>
+            <a onClick={() => navigate("/signin")} className="cursor-pointer bold underline text-blue-900" >  Sign In</a>
+        </div>
         </div>
     </div>
 }
